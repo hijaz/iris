@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Neural Network (Modules)</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+        /* --- MODAL STYLES --- */
+        .modal-backdrop {
+            display: flex; /* Use flexbox for easy centering */
+            justify-content: center;
+            align-items: center;
+            position: fixed; /* Sit on top of the page content */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent backdrop */
+            z-index: 1000; /* Make sure it's on top */
+        }
+
+        .modal-content {
+            background-color: #2c2c2c;
+            color: #f0f0f0;
+            padding: 20px 30px;
+            border: 1px solid #555;
+            border-radius: 8px;
+            max-width: 500px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            position: relative; /* For positioning the close button */
+        }
+        
+        .modal-content h2 {
+            margin-top: 0;
+            color: #00ff99;
+        }
+
+        .modal-content a {
+            color: #4dc3ff;
+            text-decoration: none;
+        }
+        .modal-content a:hover {
+            text-decoration: underline;
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+        }
+        .modal-close-btn:hover {
+            color: white;
+        }
+
+        .hidden {
+            display: none !important; /* Utility class to hide the modal */
+        }
+        /* --- END MODAL STYLES --- */
+        /* --- HUD STYLES --- */
+        #hud-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+            min-width: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hud-item {
+            margin-bottom: 8px;
+        }
+
+        .hud-label {
+            color: #aaa;
+            display: inline-block;
+            width: 100px;
+        }
+
+        .hud-value {
+            color: #00ff99; /* A bright color for the value */
+            font-weight: bold;
+        }
+        /* --- END HUD STYLES --- */
+
+    </style>
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+        "three": "https://unpkg.com/three@0.150.1/build/three.module.js"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="about-modal" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <span id="modal-close" class="modal-close-btn">&times;</span>
+            <h2>About This Project</h2>
+            <p>
+                This project is a feedforward neural network built entirely from scratch in vanilla JavaScript as a learning exercise. It is designed to solve the classic Iris flower classification problem, featuring a dynamic 3D visualization created with Three.js. This visualizer renders the network's structure and animates the training process in real-time, showing how weights, biases, and neuron activations change as the model learns from the data.
+            </p>
+            <p>
+                Created by: <a href="https://hassanijaz.com" target="_blank" rel="noopener noreferrer">hassanijaz.com</a>
+            </p>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script> 
+</body>
+</html>
